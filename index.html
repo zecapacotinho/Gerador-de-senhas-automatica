@@ -7,7 +7,47 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <main>
+        <section class="area">
+            <header>
+                <h2>Gerador de senhas automático</h2>
+            </header>
+            <section class="gerador">
+                <input type="text" name="generator" id="generator" disabled value="gótica rabuda">
+                <div class="rangeContainer">
+                    <input type="range" name="range" id="range" min="8" max="20" value="14">
+                    <span id="valueSelect">15</span>
+                </div>
+                
+
+                <div class="radio">
+                    
+                    <label for="min">
+                        <input type="checkbox" name="min" id="min">Letras minúsculas
+                    </label>
+
+                    
+                    <label for="max">
+                        <input type="checkbox" name="max" id="max">Letras maiúsculas
+                    </label>
+
+                    
+                    <label for="number">
+                        <input type="checkbox" name="number" id="number">Números
+                    </label>
+
+                    
+                    <label for="symbles">
+                        <input type="checkbox" name="symbles" id="symbles">Símbolos
+                    </label>
+                </div>
+                <input class="but" type="button" value="Gerar">
+                <button class="but" id="save">Salvar</button>
+                <button class="but" id="history">Histórico</button>
+            </section>
+        </section>
+    </main>
+
     <script src="js/script.js"></script>
 </body>
 </html>
