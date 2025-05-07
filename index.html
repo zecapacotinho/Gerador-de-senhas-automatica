@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de senhas automático</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="dark-mode">
+        <input type="checkbox" name="check" id="checkbox" class="check">
+        <label class="mode" for="checkbox">
+            <span id="sun" class="material-symbols-outlined">
+                brightness_7
+            </span>
+            <span id="moon" class="material-symbols-outlined">
+                dark_mode
+            </span>
+            <div class="ball"></div>
+        </label>
+    </div>
     <main>
         <section class="area">
             <header>
                 <h2>Gerador de senhas automático</h2>
             </header>
             <section class="gerador">
-                <input type="text" name="generator" id="generator" disabled value="gótica rabuda">
+                <input type="text" name="generator" id="generator" disabled value="gótica rabuda"
+                >
                 <div class="rangeContainer">
                     <input type="range" name="range" id="range" min="8" max="20" value="14">
                     <span id="valueSelect">15</span>
@@ -42,7 +56,7 @@
                     </label>
                 </div>
                 <input class="but" type="button" value="Gerar">
-                <button class="but" id="save">Salvar</button>
+                <button class="but" id="save">salvar</button>
                 <button class="but" id="history">Histórico</button>
             </section>
         </section>
