@@ -41,7 +41,6 @@ function checkBoxSelect(){
     if(selectNumber.checked){pool = pool.concat(selectValue)}
     if(selectSymbles.checked){pool = pool.concat(addSymbles)}
     return pool
-    atualizarValorDoRange()
 }
 
 //Função para o gerador de senha
@@ -52,6 +51,10 @@ function passwordGenerator(){
         const randomIndex = Math.floor(Math.random() * pool.length)
         password += pool[randomIndex]
     }
+    if(pool.length === 0){
+        window.alert('Por favor, selecione pelo menos uma opção para gerar a senha.')
+        password = ''
+        return
+    }
     generatorPassword.value = password
 }
-
