@@ -26,7 +26,7 @@
                 <h2>Gerador de senhas automático</h2>
             </header>
             <section class="gerador">
-                <input type="text" name="generator" id="generator" disabled>
+                <input type="text" name="generator" id="generator" readonly>
                 <div class="rangeContainer">
                     <input type="range" name="range" id="range" min="8" max="20" value="14">
                     <span id="valueSelect">14</span>
@@ -54,7 +54,7 @@
                         <input type="checkbox" name="symbles" id="symbles">Símbolos
                     </label>
                 </div>
-                <input class="but" type="button" value="Gerar" onclick="Gerador()">
+                <input class="but" type="button" value="Gerar" onclick="passwordGenerator()">
                 <button class="but" id="save">salvar</button>
                 <button class="but" id="history">Histórico</button>
             </section>

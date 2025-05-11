@@ -8,12 +8,13 @@ const selectNumber = document.querySelector('#number')
 const selectSymbles = document.querySelector('#symbles')
 const checkbox = document.querySelector('#checkbox')
 
-//Funções para o Dark Mode
+//Função para o Dark Mode
 checkbox.addEventListener('click', () => {
     const dark_mode = document.body.classList.toggle('dark')
-    localStorage.setItem('darkMode',dark_mode)
+    localStorage.setItem('darkMode', dark_mode)
 })
 
+//Função para salvar a alteração do tema
 window.addEventListener('DOMContentLoaded', () => {
     const saveMode = localStorage.getItem('darkMode') === 'true'
     if(saveMode){
@@ -28,7 +29,7 @@ function atualizarValorDoRange(){
 }
 range.addEventListener('input', atualizarValorDoRange)
 
-//Função para o gerador de senha
+//Função para o seletor
 function checkBoxSelect(){
     let pool = []
     const largeLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','T','U','V','W','X','Y','Z']
@@ -39,5 +40,18 @@ function checkBoxSelect(){
     if(maxValue.checked){pool = pool.concat(largeLetters)}
     if(selectNumber.checked){pool = pool.concat(selectValue)}
     if(selectSymbles.checked){pool = pool.concat(addSymbles)}
+    return pool
+    atualizarValorDoRange()
+}
+
+//Função para o gerador de senha
+function passwordGenerator(){
+    const pool = checkBoxSelect()
+    let password = ''
+    for(let i = 0; i < range.value; i++){    
+        const randomIndex = Math.floor(Math.random() * pool.length)
+        password += pool[randomIndex]
+    }
+    generatorPassword.value = password
 }
 
