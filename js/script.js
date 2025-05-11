@@ -46,15 +46,15 @@ function checkBoxSelect(){
 //Função para o gerador de senha
 function passwordGenerator(){
     const pool = checkBoxSelect()
-    let password = ''
-    for(let i = 0; i < range.value; i++){    
-        const randomIndex = Math.floor(Math.random() * pool.length)
-        password += pool[randomIndex]
-    }
     if(pool.length === 0){
         window.alert('Por favor, selecione pelo menos uma opção para gerar a senha.')
         password = ''
         return
+    }
+    let password = ''
+    for(let i = 0; i < range.value; i++){    
+        const randomIndex = Math.floor(Math.random() * pool.length)
+        password += pool[randomIndex]
     }
     generatorPassword.value = password
 }
