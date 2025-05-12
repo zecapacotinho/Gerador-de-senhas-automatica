@@ -47,7 +47,7 @@ function checkBoxSelect(){
 function passwordGenerator(){
     const pool = checkBoxSelect()
     if(pool.length === 0){
-        window.alert('Por favor, selecione pelo menos uma opção para gerar a senha.')
+        message('Por favor, selecione pelo menos uma opção para gerar a senha.', '#dc2626')
         password = ''
         return
     }
@@ -58,3 +58,26 @@ function passwordGenerator(){
     }
     generatorPassword.value = password
 }
+
+function message(text, background){
+    Toastify({
+        text: text,
+        duration: 2500,
+        style: {
+            background: background,
+            boxShadow: 'none'
+        }
+    }).showToast();
+}
+
+//Função para salvar a senha
+const savePassword = document.querySelector('#save')
+savePassword.addEventListener('click', () => {
+    navigator.clipboard.writeText(generatorPassword.value)
+    if(generatorPassword.value){
+        message('Senha salva com sucesso!', '#00cc00')
+    }
+    else{
+        message('Gere uma senha antes de salvar', '#dc2626')
+    }
+})
