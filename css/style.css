@@ -85,6 +85,7 @@ header{
     height: 2.2rem;
     padding: 0px 10px 0px 10px;
     font-size: 18px;
+    outline: none;
 } 
 
 .gerador #range{
@@ -126,3 +127,25 @@ header{
 }
 
 .but:hover{background-color: rgb(85, 17, 148);}
+
+.main_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.main_2 header{
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#armazene{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
