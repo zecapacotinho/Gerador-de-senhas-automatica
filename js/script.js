@@ -59,6 +59,7 @@ function passwordGenerator(){
     generatorPassword.value = password
 }
 
+//Função para as mensagens de alerta
 function message(text, background){
     Toastify({
         text: text,
