@@ -1,4 +1,4 @@
-//Variaveis
+//Variáveis
 const generatorPassword = document.querySelector('#generator')
 const range = document.querySelector('#range')
 const valueSelect = document.querySelector('#valueSelect')
@@ -75,10 +75,25 @@ function message(text, background){
 const savePassword = document.querySelector('#save')
 savePassword.addEventListener('click', () => {
     navigator.clipboard.writeText(generatorPassword.value)
-    if(generatorPassword.value){
-        message('Senha salva com sucesso!', '#00cc00')
-    }
-    else{
-        message('Gere uma senha antes de salvar', '#dc2626')
-    }
+
+    return (generatorPassword.value)
+    ? message('Senha salva com sucesso!', '#00cc00')
+    : message('Gere uma senha antes de tentar salvar', '#dc2626') 
 })
+
+const main = document.querySelector('main')
+const main_2 = document.querySelector('.main_2')
+
+function enteringHistory(){
+    main.style.display = 'none' 
+    main_2.style.display = 'block' 
+}
+
+function leavingHistory(){
+    main.style.display = 'block'
+    main_2.style.display = 'none'
+}
+
+const acessHistory = document.querySelector('#history')
+
+const exitHistory = document.querySelector('#exit')

@@ -16,6 +16,10 @@ body.dark .area{
     box-shadow: 5px 5px 15px #3b3b3b6e;
     border: 1px solid rgba(128, 128, 128, 0.534);
 }
+body.dark #storage{
+    background-color: #222;
+    color: #fff;
+}
 
 .check{
     opacity: 0;
@@ -141,7 +145,7 @@ header{
     text-align: center;
 }
 
-#armazene{
+#storage{
     width: 100%;
     margin-bottom: 20px;
     padding: 10px;
