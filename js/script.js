@@ -75,7 +75,6 @@ function message(text, background){
 const savePassword = document.querySelector('#save')
 savePassword.addEventListener('click', () => {
     navigator.clipboard.writeText(generatorPassword.value)
-
     return (generatorPassword.value)
     ? message('Senha salva com sucesso!', '#00cc00')
     : message('Gere uma senha antes de tentar salvar', '#dc2626') 
