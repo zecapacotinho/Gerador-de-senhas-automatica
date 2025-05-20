@@ -20,6 +20,11 @@ body.dark #storage{
     background-color: #222;
     color: #fff;
 }
+body.dark #generator{
+    background-color: #222;
+    color: #fff;
+    border: 1px solid gray;
+}
 
 .check{
     opacity: 0;
@@ -137,6 +142,7 @@ header{
     align-items: center;
     justify-content: center;
     height: 80vh;
+    display: none;
 }
 
 .main_2 header{

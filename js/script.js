@@ -57,8 +57,8 @@ function passwordGenerator(){
         password += pool[randomIndex]
     }
     generatorPassword.value = password
-}
-
+} 
+  
 //Função para as mensagens de alerta
 function message(text, background){
     Toastify({
@@ -75,7 +75,6 @@ function message(text, background){
 const savePassword = document.querySelector('#save')
 savePassword.addEventListener('click', () => {
     navigator.clipboard.writeText(generatorPassword.value)
-
     return (generatorPassword.value)
     ? message('Senha salva com sucesso!', '#00cc00')
     : message('Gere uma senha antes de tentar salvar', '#dc2626') 
@@ -95,5 +94,7 @@ function leavingHistory(){
 }
 
 const acessHistory = document.querySelector('#history')
+acessHistory.addEventListener('click', enteringHistory)
 
 const exitHistory = document.querySelector('#exit')
+exitHistory.addEventListener('click', leavingHistory)
