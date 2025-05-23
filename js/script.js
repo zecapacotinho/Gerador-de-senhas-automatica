@@ -85,11 +85,11 @@ const main_2 = document.querySelector('.main_2')
 
 function enteringHistory(){
     main.style.display = 'none' 
-    main_2.style.display = 'block' 
+    main_2.style.display = 'flex' 
 }
 
 function leavingHistory(){
-    main.style.display = 'block'
+    main.style.display = 'flex'
     main_2.style.display = 'none'
 }
 

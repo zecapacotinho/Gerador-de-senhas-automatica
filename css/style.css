@@ -141,8 +141,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
-    display: none;
+    height: 65vh;
+   display: none;
 }
 
 .main_2 header{
