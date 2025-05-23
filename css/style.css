@@ -141,14 +141,19 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 65vh;
-    display: none;
+    height: 70vh;
+    
 }
 
 .main_2 header{
     margin-bottom: 20px;
     font-size: 14px;
     text-align: center;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #storage{
@@ -158,4 +163,9 @@ header{
     font-size: 18px;
     text-align: center;
     outline: none;
+}
+
+option{
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
 }

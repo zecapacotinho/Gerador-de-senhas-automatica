@@ -83,18 +83,38 @@ savePassword.addEventListener('click', () => {
 const main = document.querySelector('main')
 const main_2 = document.querySelector('.main_2')
 
+//Função para acessar a área de histórico
 function enteringHistory(){
     main.style.display = 'none' 
     main_2.style.display = 'flex' 
 }
 
+//Função para acessar o gerador de senhas
 function leavingHistory(){
     main.style.display = 'flex'
     main_2.style.display = 'none'
 }
 
+//Botão de acesso ao histórico
 const acessHistory = document.querySelector('#history')
 acessHistory.addEventListener('click', enteringHistory)
 
+//Botão de acesso ao gerador de senhas
 const exitHistory = document.querySelector('#exit')
 exitHistory.addEventListener('click', leavingHistory)
+
+function saveHistory(password){
+    const save = JSON.parse(localStorage.getItem('userHistory')) || []
+    save.push(password)
+    localStorage.setItem('userHistory', JSON.stringify(save))
+    
+    const storageSelect = document.querySelector('#storage')
+    save.forEach((password, index) => {
+        const option = document.createElement('option')
+        option.value = index
+        option.textContent = password
+        const resultHistory = storageSelect.appendChild(option)
+    })
+    resultHistory.push(generatorPassword.value)
+    console.log(resultHistory)
+}
