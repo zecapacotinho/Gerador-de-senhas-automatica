@@ -173,3 +173,45 @@ option:hover{
     background-color: #fff;
     color: #000;
 }
+
+.buttonConfirm{
+    background-color: rgb(0, 187, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 10rem;
+    height: 2.2rem;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buttonConfirm:hover{background-color: rgb(0, 133, 0);}
+
+.cancelButton{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 10rem;
+    height: 2.2rem;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.cancelButton:hover{background-color: rgb(179, 0, 0);}
+
+.buttonOk{
+    background-color: rgb(0, 187, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 3.5rem;
+    height: 2.2rem;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buttonOk:hover{background-color: rgb(0, 133, 0);}

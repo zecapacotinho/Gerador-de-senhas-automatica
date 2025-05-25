@@ -137,12 +137,38 @@ saveOption.addEventListener('click', () => {
     }
 })
 
-const removeHistory = document.querySelector('#remove')
-removeHistory.addEventListener('click', () => {
-    const removeConfirm = confirm('Você tem certeza que deseja remover o seu histórico?')
-    if(removeConfirm){
-        const removeSorage = localStorage.removeItem('userHistory')
-        saveHistory()
-        alert('Histórico removido com sucesso!')
-    }
-})
+function removeHistory(){
+    const confirmRemoveHistory = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+          },
+          buttonsStyling: false
+    })
+    confirmRemoveHistory.fire({
+        icon: "warning",
+        title: 'Tem certeza?',
+        text: 'Você tem certeza que deseja remover o histórico?',
+        showCancelButton: true,
+        confirmButtonText: "Sim, tenho certeza!",
+        cancelButtonText: "Não, cancelar!",
+        customClass:{
+            confirmButton: 'buttonConfirm',
+            cancelButton: 'cancelButton'
+        }
+    }).then((result) => {
+        if(result.isConfirmed){
+            localStorage.removeItem('userHistory')
+            confirmRemoveHistory.fire({
+                icon: 'success',
+                title: 'Removido',
+                text: 'Seu histórico foi removido com sucesso!',
+                confirmButtonText: 'ok',
+                customClass:{
+                    confirmButton: 'buttonOk'
+                }
+            })
+        }
+    })
+    document.querySelector('#storage').innerHTML = ''
+}
