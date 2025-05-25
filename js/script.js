@@ -120,6 +120,7 @@ function saveHistory(password){
         option.value = password
         option.textContent = password
         const resultHistory = storageSelect.appendChild(option)
+        
     })
 }
 
