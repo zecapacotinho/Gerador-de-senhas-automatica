@@ -91,6 +91,7 @@ const main_2 = document.querySelector('.main_2')
 function enteringHistory(){
     main.style.display = 'none' 
     main_2.style.display = 'flex' 
+    saveHistory(generatorPassword.value)
 }
 
 //Função para acessar o gerador de senhas
@@ -121,3 +122,13 @@ function saveHistory(password){
         const resultHistory = storageSelect.appendChild(option)
     })
 }
+
+const removeHistory = document.querySelector('#remove')
+removeHistory.addEventListener('click', () => {
+    const removeConfirm = confirm('Você tem certeza que deseja remover o seu histórico?')
+    if(removeConfirm){
+        const removeSorage = localStorage.removeItem('userHistory')
+        saveHistory()
+        alert('Histórico removido com sucesso!')
+    }
+})
