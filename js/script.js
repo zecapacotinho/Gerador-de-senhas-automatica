@@ -57,6 +57,7 @@ function passwordGenerator(){
         password += pool[randomIndex]
     }
     generatorPassword.value = password
+    saveHistory(generatorPassword.value)
 } 
   
 //Função para as mensagens de alerta
@@ -75,9 +76,12 @@ function message(text, background){
 const savePassword = document.querySelector('#save')
 savePassword.addEventListener('click', () => {
     navigator.clipboard.writeText(generatorPassword.value)
-    return (generatorPassword.value)
-    ? message('Senha salva com sucesso!', '#00cc00')
-    : message('Gere uma senha antes de tentar salvar', '#dc2626') 
+    if(generatorPassword.value){
+        message('Senha salva com sucesso!', '#00cc00')
+    }
+    else{
+        message('Gere uma senha antes de tentar salvar', '#dc2626')
+    }
 })
 
 const main = document.querySelector('main')
@@ -109,12 +113,11 @@ function saveHistory(password){
     localStorage.setItem('userHistory', JSON.stringify(save))
     
     const storageSelect = document.querySelector('#storage')
+    storageSelect.innerHTML = ''
     save.forEach((password, index) => {
         const option = document.createElement('option')
         option.value = index
         option.textContent = password
         const resultHistory = storageSelect.appendChild(option)
     })
-    resultHistory.push(generatorPassword.value)
-    console.log(resultHistory)
 }

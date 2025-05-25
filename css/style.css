@@ -168,5 +168,9 @@ p{
 
 option{
     margin-bottom: 10px;
-    border-bottom: 1px solid;
+}
+option:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
 }
