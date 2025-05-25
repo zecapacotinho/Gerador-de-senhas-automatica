@@ -47,7 +47,7 @@ function checkBoxSelect(){
 function passwordGenerator(){
     const pool = checkBoxSelect()
     if(pool.length === 0){
-        message('Por favor, selecione pelo menos uma opção para gerar a senha.', '#dc2626')
+        message('Por favor, selecione pelo menos uma das opções para gerar a senha.', '#dc2626')
         password = ''
         return
     }
@@ -77,10 +77,10 @@ const savePassword = document.querySelector('#save')
 savePassword.addEventListener('click', () => {
     navigator.clipboard.writeText(generatorPassword.value)
     if(generatorPassword.value){
-        message('Senha salva com sucesso!', '#00cc00')
+        message('Senha copiada com sucesso!', '#00cc00')
     }
     else{
-        message('Gere uma senha antes de tentar salvar', '#dc2626')
+        message('Gere uma senha antes de tentar copiar', '#dc2626')
     }
 })
 
@@ -130,7 +130,10 @@ saveOption.addEventListener('click', () => {
     const savePassword = storageSelect.value
     if(savePassword){
         navigator.clipboard.writeText(savePassword)
-        message('Senha salva com sucesso!', '#00cc00')
+        message('Senha copiada com sucesso!', '#00cc00')
+    }
+    else{
+        message('Selecione uma senha antes de tentar copiar', '#dc2626')
     }
 })
 
