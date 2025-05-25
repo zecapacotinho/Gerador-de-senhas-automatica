@@ -108,6 +108,7 @@ acessHistory.addEventListener('click', enteringHistory)
 const exitHistory = document.querySelector('#exit')
 exitHistory.addEventListener('click', leavingHistory)
 
+//Função para salvar a senha no localStorage
 function saveHistory(password){
     const save = JSON.parse(localStorage.getItem('userHistory')) || []
     save.push(password)
@@ -124,6 +125,7 @@ function saveHistory(password){
     })
 }
 
+//Função para salvar a senha ao selecionar o option
 const saveOption = document.querySelector('#saveOption')
 const storageSelect = document.querySelector('#storage')
 saveOption.addEventListener('click', () => {
@@ -137,7 +139,9 @@ saveOption.addEventListener('click', () => {
     }
 })
 
+//Função para remover as senhas do histórico de senhas salvas
 function removeHistory(){
+    const storageSelect = document.querySelector('#storage')
     const confirmRemoveHistory = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
@@ -168,7 +172,7 @@ function removeHistory(){
                     confirmButton: 'buttonOk'
                 }
             })
+            document.querySelector('#storage').innerHTML = ''
         }
     })
-    document.querySelector('#storage').innerHTML = ''
 }
