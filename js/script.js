@@ -91,7 +91,7 @@ const main_2 = document.querySelector('.main_2')
 function enteringHistory(){
     main.style.display = 'none' 
     main_2.style.display = 'flex' 
-    saveHistory(generatorPassword.value)
+    saveHistory()
 }
 
 //Função para acessar o gerador de senhas
@@ -117,11 +117,21 @@ function saveHistory(password){
     storageSelect.innerHTML = ''
     save.forEach((password, index) => {
         const option = document.createElement('option')
-        option.value = index
+        option.value = password
         option.textContent = password
         const resultHistory = storageSelect.appendChild(option)
     })
 }
+
+const saveOption = document.querySelector('#saveOption')
+const storageSelect = document.querySelector('#storage')
+saveOption.addEventListener('click', () => {
+    const savePassword = storageSelect.value
+    if(savePassword){
+        navigator.clipboard.writeText(savePassword)
+        message('Senha salva com sucesso!', '#00cc00')
+    }
+})
 
 const removeHistory = document.querySelector('#remove')
 removeHistory.addEventListener('click', () => {
